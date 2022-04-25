@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#TODO: Install Meslo-fonts, autorandr
+
 sudo dnf -y update
 echo "defaultyes=True" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
@@ -16,7 +18,7 @@ cp ~/fedora-titus/bg.jpg ~/.config/
 cp ~/fedora-titus/.* ~/
 sudo dnf install ~/fedora-titus/rpm-packages/*.rpm -y
 
-echo "Session=bspwm" | sudo tee -a /etc/sddm.conf > /dev/null
+#TODO: Add sddm.conf to repo and copy that file
 
 mkdir -p ~/.fonts
 cd ~/.fonts
