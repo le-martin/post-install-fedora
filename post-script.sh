@@ -13,7 +13,7 @@ sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
 git clone https://github.com/christitustech/fedora-titus
 mkdir -p /home/$USER/.config
-cp -r /home/$USER/fedora-titus/dotfiles/* ~/.config/
+cp -r /home/$USER/fedora-titus/dotconfig/* ~/.config/
 cp /home/$USER/fedora-titus/bg.jpg /home/$USER/.config/
 cp /home/$USER/fedora-titus/.* /home/$USER/
 sudo dnf install /home/$USER/fedora-titus/rpm-packages/*.rpm -y
