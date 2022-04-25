@@ -12,7 +12,7 @@ sudo dnf install vim sddm git bspwm dconf-editor kitty rofi polybar sxhkd thunar
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
 git clone https://github.com/christitustech/fedora-titus
-mkdir -p /home/$USER/.config
+mkdir -p $HOME/.config
 cp -r $dir/fedora-titus/dotconfig/* $HOME/.config/
 cp $dir/fedora-titus/bg.jpg $HOME/.config/
 cp $dir/fedora-titus/.* $HOME/
