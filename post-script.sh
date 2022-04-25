@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #TODO: Install Meslo-fonts, autorandr
-dir=${pwd}
+dir=$(pwd)
 sudo dnf -y update
 echo "defaultyes=True" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
