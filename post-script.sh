@@ -18,8 +18,7 @@ cp ~/fedora-titus/bg.jpg ~/.config/
 cp ~/fedora-titus/.* ~/
 sudo dnf install ~/fedora-titus/rpm-packages/*.rpm -y
 
-#TODO: Add sddm.conf to repo and copy that file
-
+sudo cp ~/post-install-fedora/sddm.conf /etc/sddm.conf
 mkdir -p ~/.fonts
 cd ~/.fonts
 wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
