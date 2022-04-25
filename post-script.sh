@@ -10,7 +10,7 @@ sudo dnf install vim sddm git bspwm dconf-editor kitty rofi polybar sxhkd thunar
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
 git clone https://github.com/christitustech/fedora-titus
-mkdir ~/.config
+mkdir -p ~/.config
 cp -r ~/fedora-titus/dotfiles/* ~/.config/
 cp ~/fedora-titus/bg.jpg ~/.config/
 cp ~/fedora-titus/.* ~/
@@ -18,7 +18,7 @@ sudo dnf install ~/fedora-titus/rpm-packages/*.rpm -y
 
 echo "Session=bspwm" | sudo tee -a /etc/sddm.conf > /dev/null
 
-mkdir .fonts
-cd .fonts
+mkdir -p ~/.fonts
+cd ~/.fonts
 wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
 unzip FiraCode.zip
