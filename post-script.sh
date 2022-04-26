@@ -19,6 +19,7 @@ cp -r $dir/fedora-titus/dotconfig/* $HOME/.config/
 cp $dir/fedora-titus/bg.jpg $HOME/.config/
 cp $dir/fedora-titus/.* $HOME/
 sudo dnf install $dir/fedora-titus/rpm-packages/*.rpm -y
+sudo pip install autorandr
 
 sudo cp -fdr sddm-astronaut-theme /usr/share/sddm/themes/
 sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
