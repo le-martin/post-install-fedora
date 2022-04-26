@@ -12,12 +12,15 @@ sudo dnf install vim sddm git bspwm dconf-editor kitty rofi polybar sxhkd thunar
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
 git clone https://github.com/christitustech/fedora-titus
+git clone https://github.com/keyitdev/sddm-astronaut-theme.git
 mkdir -p $HOME/.config
 cp -r $dir/fedora-titus/dotconfig/* $HOME/.config/
 cp $dir/fedora-titus/bg.jpg $HOME/.config/
 cp $dir/fedora-titus/.* $HOME/
 sudo dnf install $dir/fedora-titus/rpm-packages/*.rpm -y
 
+sudo cp -fdr sddm-astronaut-theme /usr/share/sddm/themes/
+sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 sudo cp $HOME/post-install-fedora/sddm.conf /etc/sddm.conf
 mkdir -p $HOME/.fonts
 cd $HOME/.fonts
