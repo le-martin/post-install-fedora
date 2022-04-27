@@ -12,7 +12,7 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 # install dependencies
 sudo dnf install awesome neovim sddm git dconf-editor rofi nautilus picom google-roboto-fonts fontawesome-fonts fontawesome-fonts-web firefox arandr NetworkManager-wifi NetworkManager-tui network-manager-applet -y
-sudo dnf install qt5-qtstyleplugins pip -y
+sudo dnf install qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtstyleplugins pip -y
 sudo dnf install pipewire ffmpeg i3lock zsh flameshot polkit-gnome xbacklight xfce4-power-manager lxappearance -y
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 # sddm enable
