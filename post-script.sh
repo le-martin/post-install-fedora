@@ -12,14 +12,14 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 # install dependencies
 sudo dnf install awesome alacritty neovim sddm git dconf-editor rofi nautilus xcompmgr google-roboto-fonts fontawesome-fonts fontawesome-fonts-web firefox arandr NetworkManager-wifi NetworkManager-tui network-manager-applet -y
-sudo dnf install qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtstyleplugins pip scrot blueman rofi-themes -y
-sudo dnf install pipewire ffmpeg i3lock zsh flameshot polkit-gnome xbacklight xfce4-power-manager lxappearance pavucontrol -y
+sudo dnf install qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtstyleplugins pip scrot blueman rofi-themes feh ImageMagick -y
+sudo dnf install pipewire dnf-plugins-core ffmpeg i3lock zsh flameshot polkit-gnome xbacklight xfce4-power-manager lxappearance pavucontrol -y
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 # sddm enable
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
 # copy config files for awesomeWM
-git clone https://github.com/jonathf/awesome $HOME/.config/awesome
+git clone https://github.com/WillPower3309/awesome-dotfiles.git $HOME/.config/
 git clone https://github.com/lcpz/lain.git $HOME/.config/awesome/lain
 # download fedora specific packages
 git clone https://github.com/christitustech/fedora-titus
