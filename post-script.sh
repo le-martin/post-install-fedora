@@ -11,7 +11,7 @@ echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 # install dependencies
-sudo dnf install awesome alacritty neovim sddm git dconf-editor rofi nautilus xcompmgr google-roboto-fonts fontawesome-fonts fontawesome-fonts-web firefox arandr -y
+sudo dnf install awesome alacritty neovim sddm git dconf-editor rofi nautilus picom google-roboto-fonts fontawesome-fonts fontawesome-fonts-web firefox arandr -y
 sudo dnf install NetworkManager-wifi NetworkManager-tui network-manager-applet -y
 sudo dnf install qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtstyleplugins pip scrot blueman rofi-themes feh ImageMagick clips-xclips -y
 sudo dnf install pipewire dnf-plugins-core ffmpeg i3lock zsh flameshot polkit-gnome xbacklight xfce4-power-manager lxappearance pavucontrol -y
