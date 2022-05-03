@@ -23,6 +23,7 @@ sudo systemctl set-default graphical.target
 # copy config files for awesomeWM
 bash awesome-build.sh
 bash picom.sh
+mkdir -p $HOME/.config/awesome 
 git clone --recurse-submodules --remote-submodules --depth 1 -j 2 https://github.com/lcpz/awesome-copycats.git
 mv -bv awesome-copycats/{*,.[^.]*} $HOME/.config/awesome; rm -rf awesome-copycats
 #git clone -b awesome4.3-stable https://github.com/HikariKnight/material-awesome.git $HOME/.config/awesome
