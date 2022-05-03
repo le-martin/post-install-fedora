@@ -23,7 +23,9 @@ sudo systemctl set-default graphical.target
 # copy config files for awesomeWM
 bash awesome-build.sh
 bash picom.sh
-git clone -b awesome4.3-stable https://github.com/HikariKnight/material-awesome.git $HOME/.config/awesome
+git clone --recurse-submodules --remote-submodules --depth 1 -j 2 https://github.com/lcpz/awesome-copycats.git
+mv -bv awesome-copycats/{*,.[^.]*} ~/.config/awesome; rm -rf awesome-copycats
+#git clone -b awesome4.3-stable https://github.com/HikariKnight/material-awesome.git $HOME/.config/awesome
 sudo cp -fdr awesomewm.desktop /usr/share/xsessions/awesomewm.desktop
 # git clone https://github.com/lcpz/lain.git $HOME/.config/awesome/lain
 
@@ -39,7 +41,7 @@ sudo pip install autorandr
 
 sudo cp -fdr sddm-astronaut-theme /usr/share/sddm/themes/
 sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
-#sudo cp $HOME/post-install-fedora/sddm.conf /etc/sddm.conf
+sudo cp $HOME/post-install-fedora/sddm.conf /etc/sddm.conf
 mkdir -p $HOME/.fonts
 cd $HOME/.fonts
 wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip"
