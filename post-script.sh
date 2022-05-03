@@ -2,11 +2,11 @@
 
 #TODO: Install Meslo-fonts
 dir=$(pwd)
-sudo dnf -y update
 # dnf optimizations
 echo "defaultyes=True" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
+sudo dnf -y update
 # enable rpm fusion
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
