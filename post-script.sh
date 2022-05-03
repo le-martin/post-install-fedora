@@ -24,7 +24,7 @@ sudo systemctl set-default graphical.target
 bash awesome-build.sh
 bash picom.sh
 git clone --recurse-submodules --remote-submodules --depth 1 -j 2 https://github.com/lcpz/awesome-copycats.git
-mv -bv awesome-copycats/{*,.[^.]*} ~/.config/awesome; rm -rf awesome-copycats
+mv -bv awesome-copycats/{*,.[^.]*} $HOME/.config/awesome; rm -rf awesome-copycats
 #git clone -b awesome4.3-stable https://github.com/HikariKnight/material-awesome.git $HOME/.config/awesome
 sudo cp -fdr awesomewm.desktop /usr/share/xsessions/awesomewm.desktop
 # git clone https://github.com/lcpz/lain.git $HOME/.config/awesome/lain
