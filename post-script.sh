@@ -24,6 +24,7 @@ sudo systemctl set-default graphical.target
 bash awesome-build.sh
 bash picom.sh
 git clone -b awesome4.3-stable https://github.com/HikariKnight/material-awesome.git $HOME/.config/awesome
+sudo cp -fdr awesomewm.desktop /usr/share/xsessions/awesomewm.desktop
 # git clone https://github.com/lcpz/lain.git $HOME/.config/awesome/lain
 
 # download fedora specific packages
