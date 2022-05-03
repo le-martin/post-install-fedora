@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#TODO: Install Meslo-fonts, autorandr
+#TODO: Install Meslo-fonts
 dir=$(pwd)
 sudo dnf -y update
 # dnf optimizations
@@ -11,17 +11,21 @@ echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 # install dependencies
-sudo dnf install alacritty neovim sddm git dconf-editor rofi nautilus picom google-roboto-fonts fontawesome-fonts fontawesome-fonts-web firefox arandr -y
+sudo dnf install kitty neovim sddm git dconf-editor xclip rofi thunar picom google-roboto-fonts fontawesome-fonts fontawesome-fonts-web firefox arandr -y
 sudo dnf install NetworkManager-wifi NetworkManager-tui network-manager-applet -y
-sudo dnf install qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtstyleplugins pip scrot blueman rofi-themes feh ImageMagick clips-xclips -y
-sudo dnf install pipewire dnf-plugins-core ffmpeg i3lock zsh flameshot polkit-gnome xbacklight xfce4-power-manager lxappearance pavucontrol -y
+sudo dnf install qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtstyleplugins pip scrot blueman rofi-themes feh ImageMagick -y
+sudo dnf install pipewire dnf-plugins-core ffmpeg zsh flameshot polkit-gnome gnome-keyring xbacklight xfce4-power-manager lxappearance pavucontrol -y
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 # sddm enable
 sudo systemctl enable sddm
 sudo systemctl set-default graphical.target
+
 # copy config files for awesomeWM
-#git clone -b awesome4.3-stable https://github.com/HikariKnight/material-awesome.git ~/.config/awesome
+bash awesome-build.sh
+bash picom.sh
+git clone -b awesome4.3-stable https://github.com/HikariKnight/material-awesome.git $HOME/.config/awesome
 # git clone https://github.com/lcpz/lain.git $HOME/.config/awesome/lain
+
 # download fedora specific packages
 git clone https://github.com/christitustech/fedora-titus
 # install sddm theme
