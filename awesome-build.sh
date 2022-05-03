@@ -5,3 +5,4 @@ sudo dnf install cmake cmake-fedora lua-devel lua-lgi xorg-x11-proto-devel libxc
 git clone https://github.com/awesomeWM/awesome.git
 cd awesome
 make package
+sudo dnf install build/*.rpm -y
