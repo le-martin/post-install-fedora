@@ -7,11 +7,12 @@ echo "defaultyes=True" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 echo "max_parallel_downloads=10" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 sudo dnf -y update
+sudo dnf install -y @base-x @core @firefox @fonts @guest-desktop-agents @hardware-support @multimedia @networkmanager-submodules @printing
 # enable rpm fusion
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 # install dependencies
-sudo dnf install kitty neovim sddm git dconf-editor xclip rofi thunar picom google-roboto-fonts fontawesome-fonts fontawesome-fonts-web firefox arandr -y
+sudo dnf install alacritty neovim sddm git dconf-editor xclip rofi thunar picom google-roboto-fonts fontawesome-fonts fontawesome-fonts-web firefox arandr -y
 sudo dnf install NetworkManager-wifi NetworkManager-tui network-manager-applet -y
 sudo dnf install qt5-qtquickcontrols qt5-qtquickcontrols2 qt5-qtstyleplugins pip scrot blueman rofi-themes feh ImageMagick -y
 sudo dnf install pipewire dnf-plugins-core ffmpeg zsh flameshot polkit-gnome gnome-keyring xbacklight xfce4-power-manager lxappearance pavucontrol -y
@@ -23,9 +24,7 @@ sudo systemctl set-default graphical.target
 # copy config files for awesomeWM
 bash awesome-build.sh
 bash picom.sh
-mkdir -p $HOME/.config/awesome 
-git clone --recurse-submodules --remote-submodules --depth 1 -j 2 https://github.com/lcpz/awesome-copycats.git
-mv -bv awesome-copycats/{*,.[^.]*} $HOME/.config/awesome; rm -rf awesome-copycats
+git clone https://github.com/ichbinram/dotfiles.git $HOME/
 #git clone -b awesome4.3-stable https://github.com/HikariKnight/material-awesome.git $HOME/.config/awesome
 sudo cp -fdr awesomewm.desktop /usr/share/xsessions/awesomewm.desktop
 # git clone https://github.com/lcpz/lain.git $HOME/.config/awesome/lain
@@ -36,7 +35,8 @@ git clone https://github.com/christitustech/fedora-titus
 git clone https://github.com/keyitdev/sddm-astronaut-theme.git
 mkdir -p $HOME/.config
 #cp -r $dir/fedora-titus/dotconfig/* $HOME/.config/
-cp $dir/fedora-titus/bg.jpg $HOME/.config/
+mkdir -p $HOME/.wallpaper
+cp $dir/fedora-titus/bg.jpg $HOME/.wallpaper/
 sudo dnf install $dir/fedora-titus/rpm-packages/*.rpm -y
 sudo pip install autorandr
 
